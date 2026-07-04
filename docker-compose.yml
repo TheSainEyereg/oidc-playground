@@ -1,5 +1,6 @@
 services:
   oidc-playground:
+    image: ghcr.io/thesaineyereg/oidc-playground:latest
     build:
       context: .
       dockerfile: Dockerfile
