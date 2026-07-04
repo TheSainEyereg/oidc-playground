@@ -11,6 +11,26 @@ Also, OAuth2 playgrounds out there don't work that well.
 
 ## Running the app
 
+### Using Docker Compose
+
+```bash
+curl -L -O https://github.com/TheSainEyereg/oidc-playground/raw/refs/heads/main/docker-compose.yml 
+
+docker compose up -d
+```
+
+### Using Docker
+
+```bash
+docker run -d \
+    --name oidc-playground \
+    --restart unless-stopped \
+    -p 4200:4200 \
+    ghcr.io/thesaineyereg/oidc-playground:latest
+```
+
+### Building from source
+
 To start both the proxy server and the UI, run `npm start` and then go to 
 http://localhost:4200/.
 (You will need Node.js and the dependencies installed with `npm install`)
