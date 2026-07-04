@@ -1,0 +1,9 @@
+services:
+  oidc-playground:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: oidc-playground
+    ports:
+      - "4200:4200"
+    restart: unless-stopped
