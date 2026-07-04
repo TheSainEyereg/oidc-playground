@@ -14,7 +14,15 @@ Also, OAuth2 playgrounds out there don't work that well.
 ### Using Docker Compose
 
 ```bash
-curl -L -O https://github.com/TheSainEyereg/oidc-playground/raw/refs/heads/main/docker-compose.yml 
+cat << EOF > docker-compose.yml
+services:
+  oidc-playground:
+    image: ghcr.io/thesaineyereg/oidc-playground:latest
+    container_name: oidc-playground
+    ports:
+      - "4200:4200"
+    restart: unless-stopped
+EOF
 
 docker compose up -d
 ```
